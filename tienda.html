@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <title>Fiveter Games - Tienda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body class="tienda">
+    <header class="tienda__header">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-sharp fa-solid fa-bars"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#"><button class="dropdown-item" type="button">TIENDA <i class="fa-sharp fa-solid fa-check"></i></button></a></li>
+              <li><a href="./sobreNosotros.html"><button class="dropdown-item" type="button">SOBRE NOSOTROS</button></a></li>
+            </ul>
+          </div>
+        <div>
+            <img src="./img/headerProducts.png">
+        </div>
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+            </button>
+        <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito de compras</h1>
+                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                                
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <a href="./index.html"><button type="button" class="btn btn-primary">Finalizar Compra</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <main>
+        <div class="searchInput">
+            <input type="search" name="" id="" placeholder="Buscador de productos">
+            <button><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle categorieButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                </button>
+                <ul class="dropdown-menu">
+                  <li><button class="categories" id="memoriasCategoria">Memorias</button></li>
+                  <li><button class="categories" id="gabineteCategoria">Gabinetes</button></li>
+                </ul>
+              </div>
+        </div>
+        <div id="productsManager" class="productsShop">
+
+        </div>
+    </main>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/26a3ce8a2d.js" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
