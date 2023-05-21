@@ -26,6 +26,7 @@
         <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                <span id="contadorCarrito" class="contadorCarrito"></span>
             </button>
         <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -35,11 +36,12 @@
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito de compras</h1>
                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div id="modal-body" class="modalBody">
                                 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <p>Precio total: $ <span id="precioTotal"></span></p>
+                            <button class="btn btn-secondary" id="vaciar-carrito">Vaciar carrito</button>
                             <a href="./index.html"><button type="button" class="btn btn-primary">Finalizar Compra</button></a>
                         </div>
                     </div>
@@ -47,18 +49,15 @@
             </div>
     </header>
     <main>
-        <div class="searchInput">
-            <input type="search" name="" id="" placeholder="Buscador de productos">
-            <button><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
-        </div>
         <div>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle categorieButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle categoriaButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Categorias
                 </button>
                 <ul class="dropdown-menu">
-                  <li><button class="categories" id="memoriasCategoria">Memorias</button></li>
-                  <li><button class="categories" id="gabineteCategoria">Gabinetes</button></li>
+                    <li><button class="categories" id="allProducts">Todos</button></li>
+                    <li><button class="categories" id="memoriasCategoria">Memorias</button></li>
+                    <li><button class="categories" id="gabineteCategoria">Gabinetes</button></li>
                 </ul>
               </div>
         </div>
