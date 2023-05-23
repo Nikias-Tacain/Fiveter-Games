@@ -1,0 +1,38 @@
+@import './base/variables';
+.tienda{
+    @extend %bodys;
+    &__header{
+        @extend %header;
+    }
+    &__productsShop{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 4%;
+        text-align: center;
+    }
+    &__categories{
+        margin-left: 15px;
+    }
+    &__contadorCarrito{
+        font-size: 20px;
+    }    
+}
+.dropdown-menu button:hover{
+    background-color: #9996a8;
+}
+.btn{
+    height: 50px;
+}
+.flex{
+    margin: auto;
+    padding: 20px;
+}
+.categoriaButton{
+    margin-left: 45%;
+}
+.modalBody div{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    border-bottom: 1px solid;
+}

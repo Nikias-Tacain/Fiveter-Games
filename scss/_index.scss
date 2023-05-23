@@ -1,0 +1,58 @@
+@import './base/variables';
+.index{
+    @extend %bodys;
+    &__header{
+        text-align: center;
+        height: 50px;
+    }
+    &__sloganProducts{
+        margin-top: 3%;
+        margin-left: 25%;
+        text-align: center;
+        width: 50%;
+    }
+    &__sections{
+        display: flex;
+        border-radius: 12px;
+        width: 20%;
+        margin: auto;
+        text-align: center;
+        margin-top: 30px;
+        justify-content: space-around;
+        button{
+            border-radius: 25px;
+            padding: 9px;
+        }
+        button:hover{
+            background-color: rgb(182, 180, 180);
+        }
+    }
+    &__wireframe{
+        width: 30%;
+        height: 335px;
+        margin: 30px 40.5%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        animation: wireframe 40s infinite;
+    }
+}
+@keyframes wireframe{
+    0%{
+        background-image: url(../img/graciasPorComprar.png);
+    }
+    15%{
+        background-image: url(../img/envioProductos.png);
+    }
+    35%{
+        background-image: url(../img/proteccionTarjetas.png);
+    }
+    50%{
+        background-image: url(../img/productosCalidad.png);
+    }
+    75%{
+        background-image: url(../img/dudasCorreo.png);
+    }
+    100%{
+        background-image: url(../img/graciasPorComprar.png);
+    }
+}

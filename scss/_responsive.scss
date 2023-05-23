@@ -1,0 +1,266 @@
+@media screen and (max-width: 1024px){
+    .index{
+        &__header img{
+            width: 80%;
+        }
+        &__sloganProducts{
+            margin-top: 80px;
+        }
+        &__sections a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+    }
+    .sobreNosotros{
+        padding: 0;
+        &__header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-around;
+            img{
+                width: 250px;
+            }
+        }
+        &__section {
+            display: flex;
+            flex-direction: column;
+            iframe{
+                width: 100%;
+            }
+            &__info{
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 900px){
+    .index{
+        &__header img{
+            width: 100%;
+        }
+        &__sloganProducts{
+            margin-top: 80px;
+        }
+        &__sections a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        &__wireframe{
+            margin: 0;
+            margin-left: 28%;
+            width: 100%;
+            margin-top: 30px;
+        }
+    }
+    .sobreNosotros{
+        padding: 0;
+        &__header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-around;
+            img{
+                width: 250px;
+            }
+        }
+        &__section {
+            display: flex;
+            flex-direction: column;
+            iframe{
+                width: 100%;
+            }
+            &__info{
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 740px){
+    .index{
+        &__header img{
+            width: 100%;
+        }
+        &__sloganProducts{
+            margin-top: 50px;
+        }
+        &__sections a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        &__wireframe{
+            margin: 0;
+            margin-left: 140px;
+            width: 100%;
+            margin-top: 30px;
+        }
+    }
+    .sobreNosotros{
+        padding: 0;
+        &__header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-around;
+            img{
+                width: 250px;
+            }
+        }
+        &__section {
+            display: flex;
+            flex-direction: column;
+            iframe{
+                width: 100%;
+            }
+            &__info{
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 650px){
+    .index{
+        &__header img{
+            width: 100%;
+        }
+        &__sloganProducts{
+            width: 100%;
+            margin-left: 0;
+        }
+        &__sections a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        &__wireframe{
+            margin: 0;
+            margin-left: 100px;
+            width: 100%;
+            margin-top: 30px;
+        }
+    }
+    .sobreNosotros{
+        padding: 0;
+        &__header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-around;
+            img{
+                width: 250px;
+            }
+        }
+        &__section {
+            display: flex;
+            flex-direction: column;
+            iframe{
+                width: 100%;
+            }
+            &__info{
+                width: 100%;
+            }
+        }
+    }
+    .tienda{
+        padding: 0;
+        &__header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-around;
+            img{
+                width: 200px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 445px) and (max-width: 550px){
+    .index{
+        &__header img{
+            width: 100%;
+        }
+        &__sloganProducts{
+            width: 100%;
+            margin-left: 0;
+        }
+        &__sections a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        &__wireframe{
+            margin: 0;
+            margin-left: 45px;
+            width: 100%;
+            margin-top: 30px;
+        }
+    }
+    .sobreNosotros{
+        padding: 0;
+        &__header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-around;
+            img{
+                width: 250px;
+            }
+        }
+        &__section {
+            display: flex;
+            flex-direction: column;
+            iframe{
+                width: 100%;
+            }
+            &__info{
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 445px){
+    .index{
+        &__header img{
+            width: 100%;
+        }
+        &__sloganProducts{
+            width: 100%;
+            margin-left: 0;
+        }
+        &__sections a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        &__wireframe{
+            margin: 0;
+            margin-top: 30px;
+            width: 100%;
+        }
+    }
+    .sobreNosotros{
+        padding: 0;
+        &__header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-around;
+            img{
+                width: 250px;
+            }
+        }
+        &__section {
+            display: flex;
+            flex-direction: column;
+            iframe{
+                width: 100%;
+            }
+            &__info{
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@import './base/variables';
+.sobreNosotros{
+    @extend %bodys;
+    &__header{
+        width: 65%;
+        @extend %header;
+    }
+    &__section{
+        margin-top: 5%;
+        display: flex;
+        &__info{
+            border: 1px solid white;
+            border-radius: 12px;
+            text-align: center;
+            width: 30%;
+            height: 300px;
+            margin-top: 5%;
+            margin: auto;
+            a{
+                font-size: 45px;
+                margin-left: 20px;
+            }
+        }
+    }
+}

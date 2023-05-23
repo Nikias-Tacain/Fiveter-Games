@@ -50,12 +50,19 @@ let catalogo = [
     imagen: "./img/FuenteASUSTUF550W80PlusBronze550B.jpg", 
     cantidad: 1}
 ]
+//Declarando variables
 
 const productsManager = document.getElementById("productsManager")
 const modalCarrito = document.getElementById('modal-body')
 const vaciarCarrito = document.getElementById('vaciar-carrito')
 const contadorCarrito = document.getElementById('contadorCarrito')
 const precioTotalCarrito = document.getElementById('precioTotal')
+let todosLosProductos = document.getElementById("allProducts")
+let memoriasCategoria = document.getElementById("memoriasCategoria")
+let gabineteCategoria = document.getElementById("gabineteCategoria")
+
+//LocalStorage
+
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')){
         carrito = JSON.parse(localStorage.getItem('carrito'))
@@ -63,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 let carrito = []
+
 //Todos los productos
-let todosLosProductos = document.getElementById("allProducts")
 
 async function allProducts(){
     catalogo.forEach((productos) => {
@@ -87,8 +94,8 @@ async function allProducts(){
         })
     })
 }
+
 //Categoria memoria
-let memoriasCategoria = document.getElementById("memoriasCategoria")
 
 async function categoriaMemorias() {
     const datosFiltrados = catalogo.filter(dato => dato.categoria === "memorias")
@@ -114,7 +121,6 @@ async function categoriaMemorias() {
 }
 
 //Categoria gabinete
-let gabineteCategoria = document.getElementById("gabineteCategoria")
 
 async function categoriaGabinetes() {
     const datosFiltrados = catalogo.filter(dato => dato.categoria === "gabinete")
@@ -138,26 +144,32 @@ async function categoriaGabinetes() {
         })
     })
 }
+
 //imprimir main de la tienda
+
 allProducts()
 
 //imprimir categoria todos
+
 todosLosProductos.addEventListener('click', () => {
     productsManager.innerHTML= ''
     allProducts()
 });
 
 //imprimir categoria memorias
+
 memoriasCategoria.addEventListener('click', () => {
     productsManager.innerHTML= ''
     categoriaMemorias()    
 });
 
 //imprimir categoria gabinete
+
 gabineteCategoria.addEventListener('click', () => {
     productsManager.innerHTML= ''
     categoriaGabinetes()    
 });
+
 const actualizarCarrito = () => {
     modalCarrito.innerHTML = ''
     carrito.forEach((prod) =>{
@@ -175,6 +187,13 @@ const actualizarCarrito = () => {
 }
 const agregarAlCarrito = (prodId) => {
     const existe = carrito.some(prod => prod.id === prodId)
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Se agrego correctamente al carrito.',
+        showConfirmButton: false,
+        timer: 900
+    })
     if (existe) {
         carrito.map(prod => {
         if (prod.id === prodId){
@@ -188,9 +207,21 @@ const agregarAlCarrito = (prodId) => {
     actualizarCarrito()
 }
 vaciarCarrito.addEventListener('click', () => {
-    carrito.length = 0
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-    actualizarCarrito()
+    Swal.fire({
+        title: 'Quiere vaciar el carrito de compras?',
+        showDenyButton: true,
+        confirmButton: false,
+        showConfirmButton: false,
+        showCancelButton: true,
+        denyButtonText: `Borrar`,
+    }).then((result) => {
+        if (result.isDenied) {
+            Swal.fire('Se borro el carrito', '', 'info')
+            carrito.length = 0
+            localStorage.setItem('carrito', JSON.stringify(carrito))
+            actualizarCarrito()
+        }
+    })
 })
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
@@ -199,4 +230,3 @@ const eliminarDelCarrito = (prodId) => {
     localStorage.setItem('carrito', JSON.stringify(carrito))
     actualizarCarrito()
 }
-
