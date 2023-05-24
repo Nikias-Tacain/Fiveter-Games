@@ -135,6 +135,9 @@ body {
   font-size: 15px;
   border-bottom: 1px solid; }
 
+.modal-footer a {
+  text-decoration: none; }
+
 @media screen and (max-width: 1024px) {
   .index__header img {
     width: 80%; }

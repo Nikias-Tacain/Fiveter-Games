@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 let carrito = []
-
 //Todos los productos
 
 async function allProducts(){
@@ -171,7 +170,9 @@ gabineteCategoria.addEventListener('click', () => {
 });
 
 const actualizarCarrito = () => {
-    modalCarrito.innerHTML = ''
+    let finallyCompra = document.getElementById('finallyCompra')
+    let mensaje = carrito.length === 0 ? "Carrito vacío..." : "";
+    modalCarrito.innerHTML = mensaje;
     carrito.forEach((prod) =>{
         const div = document.createElement('div')
         div.innerHTML = `
@@ -184,6 +185,13 @@ const actualizarCarrito = () => {
     })
     contadorCarrito.innerText = carrito.length
     precioTotalCarrito.innerText = carrito.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)
+    if (carrito.length === 0) {
+        finallyCompra.style.display = 'none';
+        vaciarCarrito.style.display = 'none';
+    }else{
+        finallyCompra.style.display = 'block';
+        vaciarCarrito.style.display = 'block';
+    }
 }
 const agregarAlCarrito = (prodId) => {
     const existe = carrito.some(prod => prod.id === prodId)
