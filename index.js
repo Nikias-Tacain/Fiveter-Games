@@ -179,6 +179,10 @@ const actualizarCarrito = () => {
         <p>${prod.nombre}</p>
         <p>Precio: ${prod.precio}</p>
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+        <div class="buttonsProps">
+            <span onclick="sumarAlCarrito(${prod.id})"><i class="fa-sharp fa-solid fa-plus"></i></span>
+            <span onclick="restarAlCarrito(${prod.id})"><i class="fa-sharp fa-solid fa-minus"></i></span>
+        </div>
         <button onclick="eliminarDelCarrito(${prod.id})"<i class="fas fa-trash-alt"></button>`
         modalCarrito.appendChild(div)
         localStorage.setItem('carrito', JSON.stringify(carrito))
@@ -192,6 +196,29 @@ const actualizarCarrito = () => {
         finallyCompra.style.display = 'block';
         vaciarCarrito.style.display = 'block';
     }
+    finallyCompra.addEventListener('click' , function() {
+        finallyCompra.style.backgroundColor = 'green';
+        finallyCompra.innerHTML = '<i class="fas fa-spinner fa-spin"></i>'
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Quieres finalizar tu compra ? El carrito sera eliminado y se te redirigira a otra pagina para completar tu orden.',
+                showDenyButton: true,
+                confirmButton: false,
+                showConfirmButton: false,
+                showCancelButton: true,
+                denyButtonText: `Finalizar`,
+            }).then((result) => {
+                if (result.isDenied) {
+                    Swal.fire('Redirigiendo', '', 'info')
+                    //carrito guardado antes en una variable asi lo mando a otro lado xd
+                    carrito.length = 0
+                    localStorage.setItem('carrito', JSON.stringify(carrito))
+                    actualizarCarrito()
+                    window.location.href = 'index.html';
+                }
+            })
+        }, 2000);
+    })
 }
 const agregarAlCarrito = (prodId) => {
     const existe = carrito.some(prod => prod.id === prodId)
@@ -236,5 +263,27 @@ const eliminarDelCarrito = (prodId) => {
     const indice = carrito.indexOf(item)
     carrito.splice(indice, 1)
     localStorage.setItem('carrito', JSON.stringify(carrito))
+    actualizarCarrito()
+}
+const sumarAlCarrito = (prodId) => {
+    const existe = carrito.some(prod => prod.id === prodId)
+    if (existe) {
+        carrito.map(prod => {
+        if (prod.id === prodId){
+            prod.cantidad++
+        }
+        })
+    }
+    actualizarCarrito()
+}
+const restarAlCarrito = (prodId) => {
+    const existe = carrito.some(prod => prod.id === prodId)
+    if (existe) {
+        carrito.map(prod => {
+        if (prod.id === prodId & prod.cantidad > 1){
+            prod.cantidad--
+        }
+        })
+    }
     actualizarCarrito()
 }

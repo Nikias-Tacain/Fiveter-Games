@@ -133,10 +133,19 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 15px;
-  border-bottom: 1px solid; }
+  border-bottom: 1px solid;
+  border-left: 1px solid; }
 
 .modal-footer a {
   text-decoration: none; }
+
+.buttonsProps {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.buttonsProps span {
+  cursor: pointer; }
 
 @media screen and (max-width: 1024px) {
   .index__header img {
