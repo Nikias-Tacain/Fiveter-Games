@@ -144,31 +144,6 @@ async function categoriaGabinetes() {
     })
 }
 
-//imprimir main de la tienda
-
-allProducts()
-
-//imprimir categoria todos
-
-todosLosProductos.addEventListener('click', () => {
-    productsManager.innerHTML= ''
-    allProducts()
-});
-
-//imprimir categoria memorias
-
-memoriasCategoria.addEventListener('click', () => {
-    productsManager.innerHTML= ''
-    categoriaMemorias()    
-});
-
-//imprimir categoria gabinete
-
-gabineteCategoria.addEventListener('click', () => {
-    productsManager.innerHTML= ''
-    categoriaGabinetes()    
-});
-
 const actualizarCarrito = () => {
     let finallyCompra = document.getElementById('finallyCompra')
     let mensaje = carrito.length === 0 ? "Carrito vacío..." : "";
@@ -200,23 +175,7 @@ const actualizarCarrito = () => {
         finallyCompra.style.backgroundColor = 'green';
         finallyCompra.innerHTML = '<i class="fas fa-spinner fa-spin"></i>'
         setTimeout(function() {
-            Swal.fire({
-                title: 'Quieres finalizar tu compra ? El carrito sera eliminado y se te redirigira a otra pagina para completar tu orden.',
-                showDenyButton: true,
-                confirmButton: false,
-                showConfirmButton: false,
-                showCancelButton: true,
-                denyButtonText: `Finalizar`,
-            }).then((result) => {
-                if (result.isDenied) {
-                    Swal.fire('Redirigiendo', '', 'info')
-                    //carrito guardado antes en una variable asi lo mando a otro lado xd
-                    carrito.length = 0
-                    localStorage.setItem('carrito', JSON.stringify(carrito))
-                    actualizarCarrito()
-                    window.location.href = 'index.html';
-                }
-            })
+            window.location.href = 'ordenDeCompra.html';
         }, 2000);
     })
 }
@@ -251,7 +210,6 @@ vaciarCarrito.addEventListener('click', () => {
         denyButtonText: `Borrar`,
     }).then((result) => {
         if (result.isDenied) {
-            Swal.fire('Se borro el carrito', '', 'info')
             carrito.length = 0
             localStorage.setItem('carrito', JSON.stringify(carrito))
             actualizarCarrito()
@@ -287,3 +245,28 @@ const restarAlCarrito = (prodId) => {
     }
     actualizarCarrito()
 }
+
+//imprimir main de la tienda
+
+allProducts()
+
+//imprimir categoria todos
+
+todosLosProductos.addEventListener('click', () => {
+    productsManager.innerHTML= ''
+    allProducts()
+});
+
+//imprimir categoria memorias
+
+memoriasCategoria.addEventListener('click', () => {
+    productsManager.innerHTML= ''
+    categoriaMemorias()    
+});
+
+//imprimir categoria gabinete
+
+gabineteCategoria.addEventListener('click', () => {
+    productsManager.innerHTML= ''
+    categoriaGabinetes()    
+});

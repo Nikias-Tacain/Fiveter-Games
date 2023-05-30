@@ -10,7 +10,7 @@ li a {
 body {
   overflow-x: hidden; }
 
-.index, .sobreNosotros, .tienda {
+.index, .ordenDeCompra, .sobreNosotros, .tienda {
   padding-left: 40px;
   padding-right: 40px;
   background-color: #7d7896; }
@@ -66,7 +66,68 @@ body {
   100% {
     background-image: url(../img/graciasPorComprar.png); } }
 
-.index, .sobreNosotros, .tienda {
+.index, .ordenDeCompra, .sobreNosotros, .tienda {
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #7d7896; }
+
+.sobreNosotros__header, .tienda__header {
+  display: flex;
+  justify-content: space-between;
+  height: 50px; }
+
+.carritoOrden div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  border: 1px solid;
+  width: 50%;
+  margin: auto;
+  padding: 7px;
+  background-color: white; }
+
+.precioTotalOrden {
+  display: flex;
+  justify-content: flex-end;
+  width: 75%; }
+
+.modalTarjeta {
+  background-color: 182;
+  border: 1px solid;
+  border-radius: 12px;
+  width: 20%;
+  height: 200px;
+  padding: 30px; }
+  .modalTarjeta__chip {
+    background-color: #a1a0a0;
+    width: 55px;
+    height: 40px;
+    border-radius: 12px; }
+  .modalTarjeta__num {
+    margin-top: 12px;
+    font-size: 20px; }
+  .modalTarjeta__extras {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; }
+  .modalTarjeta__info {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    align-items: center; }
+  .modalTarjeta__inputs {
+    padding-left: 22px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column; }
+    .modalTarjeta__inputs input {
+      margin-bottom: 12px; }
+
+input {
+  width: 300px;
+  height: 30px; }
+
+.index, .ordenDeCompra, .sobreNosotros, .tienda {
   padding-left: 40px;
   padding-right: 40px;
   background-color: #7d7896; }
@@ -94,7 +155,7 @@ body {
       font-size: 45px;
       margin-left: 20px; }
 
-.index, .sobreNosotros, .tienda {
+.index, .ordenDeCompra, .sobreNosotros, .tienda {
   padding-left: 40px;
   padding-right: 40px;
   background-color: #7d7896; }
@@ -171,7 +232,18 @@ body {
       .sobreNosotros__section iframe {
         width: 100%; }
       .sobreNosotros__section__info {
-        width: 100%; } }
+        width: 100%; }
+  .carritoOrden div {
+    width: 100%;
+    text-align: center; }
+  .modalTarjeta {
+    width: 100%; }
+    .modalTarjeta__info {
+      display: flex;
+      flex-direction: column; }
+    .modalTarjeta__inputs {
+      margin-top: 30px;
+      padding: 0; } }
 
 @media screen and (max-width: 900px) {
   .index__header img {
@@ -202,7 +274,18 @@ body {
       .sobreNosotros__section iframe {
         width: 100%; }
       .sobreNosotros__section__info {
-        width: 100%; } }
+        width: 100%; }
+  .carritoOrden div {
+    width: 100%;
+    text-align: center; }
+  .modalTarjeta {
+    width: 100%; }
+    .modalTarjeta__info {
+      display: flex;
+      flex-direction: column; }
+    .modalTarjeta__inputs {
+      margin-top: 30px;
+      padding: 0; } }
 
 @media screen and (max-width: 740px) {
   .index__header img {
@@ -233,7 +316,18 @@ body {
       .sobreNosotros__section iframe {
         width: 100%; }
       .sobreNosotros__section__info {
-        width: 100%; } }
+        width: 100%; }
+  .carritoOrden div {
+    width: 100%;
+    text-align: center; }
+  .modalTarjeta {
+    width: 100%; }
+    .modalTarjeta__info {
+      display: flex;
+      flex-direction: column; }
+    .modalTarjeta__inputs {
+      margin-top: 30px;
+      padding: 0; } }
 
 @media screen and (max-width: 650px) {
   .index__header img {
@@ -274,7 +368,18 @@ body {
       width: 100%;
       justify-content: space-around; }
       .tienda__header img {
-        width: 200px; } }
+        width: 200px; }
+  .carritoOrden div {
+    width: 100%;
+    text-align: center; }
+  .modalTarjeta {
+    width: 100%; }
+    .modalTarjeta__info {
+      display: flex;
+      flex-direction: column; }
+    .modalTarjeta__inputs {
+      margin-top: 30px;
+      padding: 0; } }
 
 @media screen and (min-width: 445px) and (max-width: 550px) {
   .index__header img {
@@ -306,7 +411,18 @@ body {
       .sobreNosotros__section iframe {
         width: 100%; }
       .sobreNosotros__section__info {
-        width: 100%; } }
+        width: 100%; }
+  .carritoOrden div {
+    width: 100%;
+    text-align: center; }
+  .modalTarjeta {
+    width: 100%; }
+    .modalTarjeta__info {
+      display: flex;
+      flex-direction: column; }
+    .modalTarjeta__inputs {
+      margin-top: 30px;
+      padding: 0; } }
 
 @media screen and (max-width: 445px) {
   .index__header img {
@@ -337,4 +453,15 @@ body {
       .sobreNosotros__section iframe {
         width: 100%; }
       .sobreNosotros__section__info {
-        width: 100%; } }
+        width: 100%; }
+  .carritoOrden div {
+    width: 100%;
+    text-align: center; }
+  .modalTarjeta {
+    width: 100%; }
+    .modalTarjeta__info {
+      display: flex;
+      flex-direction: column; }
+    .modalTarjeta__inputs {
+      margin-top: 30px;
+      padding: 0; } }

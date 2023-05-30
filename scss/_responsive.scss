@@ -34,6 +34,21 @@
             }
         }
     }
+    .carritoOrden div{
+        width: 100%;
+        text-align: center;
+    }
+    .modalTarjeta{
+        width: 100%;
+        &__info{
+            display: flex;
+            flex-direction: column;
+        }
+        &__inputs{
+            margin-top: 30px;
+            padding: 0;
+        }
+    }
 }
 @media screen and (max-width: 900px){
     .index{
@@ -77,6 +92,21 @@
             }
         }
     }
+    .carritoOrden div{
+        width: 100%;
+        text-align: center;
+    }
+    .modalTarjeta{
+        width: 100%;
+        &__info{
+            display: flex;
+            flex-direction: column;
+        }
+        &__inputs{
+            margin-top: 30px;
+            padding: 0;
+        }
+    }
 }
 @media screen and (max-width: 740px){
     .index{
@@ -118,6 +148,21 @@
             &__info{
                 width: 100%;
             }
+        }
+    }
+    .carritoOrden div{
+        width: 100%;
+        text-align: center;
+    }
+    .modalTarjeta{
+        width: 100%;
+        &__info{
+            display: flex;
+            flex-direction: column;
+        }
+        &__inputs{
+            margin-top: 30px;
+            padding: 0;
         }
     }
 }
@@ -176,6 +221,21 @@
             }
         }
     }
+    .carritoOrden div{
+        width: 100%;
+        text-align: center;
+    }
+    .modalTarjeta{
+        width: 100%;
+        &__info{
+            display: flex;
+            flex-direction: column;
+        }
+        &__inputs{
+            margin-top: 30px;
+            padding: 0;
+        }
+    }
 }
 @media screen and (min-width: 445px) and (max-width: 550px){
     .index{
@@ -220,6 +280,21 @@
             }
         }
     }
+    .carritoOrden div{
+        width: 100%;
+        text-align: center;
+    }
+    .modalTarjeta{
+        width: 100%;
+        &__info{
+            display: flex;
+            flex-direction: column;
+        }
+        &__inputs{
+            margin-top: 30px;
+            padding: 0;
+        }
+    }
 }
 @media screen and (max-width: 445px){
     .index{
@@ -261,6 +336,21 @@
             &__info{
                 width: 100%;
             }
+        }
+    }
+    .carritoOrden div{
+        width: 100%;
+        text-align: center;
+    }
+    .modalTarjeta{
+        width: 100%;
+        &__info{
+            display: flex;
+            flex-direction: column;
+        }
+        &__inputs{
+            margin-top: 30px;
+            padding: 0;
         }
     }
 }
