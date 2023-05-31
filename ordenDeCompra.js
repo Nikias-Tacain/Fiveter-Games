@@ -20,9 +20,16 @@ carritoCompra.forEach((prod) =>{
     ordenDeCompra.appendChild(div)
 })
 precioCarrito.innerText = carritoCompra.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0);
-
-//Tarjeta
-
+function validar() {
+    let numTarjeta = document.getElementById('card-number-input').value;
+    let titularTarjeta = document.getElementById('card-holder-input').value;
+    let expirationTarjeta = document.getElementById('expiration-date-input').value;
+    if (numTarjeta && titularTarjeta && expirationTarjeta) {
+        tarjetaFinally.style.backgroundColor = 'green';
+        localStorage.removeItem('carrito');
+    }
+}
+//Numero Tarjeta
 cardNumberInput.addEventListener("input", function(event) {
     let inputValue = event.target.value;
     
@@ -32,29 +39,34 @@ cardNumberInput.addEventListener("input", function(event) {
   
     cardNumberElement.textContent = event.target.value;
 });
-
+//Titular Tarjeta
+function convertirMayusculas(input) {
+    let valor = input.value;
+  valor = valor.toUpperCase();
+  valor = valor.replace(/[^A-Z\s]/g, '');
+  input.value = valor;
+}
 cardHolderInput.addEventListener("input", function(event) {
     let inputValue = event.target.value;
-    let uppercaseValue = inputValue.toUpperCase();
-    let lettersOnly = inputValue.replace(/[^a-zA-Z]/g, '');
-    cardHolderElement.textContent = event.target.value;
-    if (inputValue.length >= 16) {
-        event.target.value = inputValue.slice(0, 16);
+    if (inputValue.length >= 19) {
+        event.target.value = inputValue.slice(0, 19);
     }
     cardHolderElement.textContent = event.target.value;
-    event.target.value = lettersOnly;
-    event.target.value = uppercaseValue;
 });
-
+//Fecha Expiracion Tarjeta
+function formatoFecha(input) {
+    let valor = input.value;
+    valor = valor.replace(/\D/g, '');
+    let mes = valor.substring(0, 2);
+    let año = valor.substring(2, 4);
+    valor = mes + (mes.length === 2 ? '/' : '') + año;
+    input.value = valor;
+}
 expirationDateInput.addEventListener("input", function(event) {
-  expirationDateElement.textContent = event.target.value;
+    let expiration = event.target.value;
+    
+    if (expiration.length >= 5) {
+      event.target.value = expiration.slice(0, 5);
+    }
+    expirationDateElement.textContent = event.target.value;
 });
-
-tarjetaFinally.addEventListener('click' , function() {
-    tarjetaFinally.style.backgroundColor = 'green';
-    tarjetaFinally.innerText = 'Gracias por confiar !!!'
-    setTimeout(function() {
-        localStorage.removeItem('carrito');
-        window.location.href = 'tienda.html';
-    }, 2000);
-})

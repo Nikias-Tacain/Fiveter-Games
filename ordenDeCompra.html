@@ -32,13 +32,15 @@
                 <p id="expiration-date"></p>
             </div>
         </div>
-        <div class="modalTarjeta__inputs">
-            <input type="number" id="card-number-input" placeholder="Número de tarjeta" required>
-            <input type="text" id="card-holder-input" placeholder="Nombre del titular" required>
-            <input type="text" id="expiration-date-input" placeholder="Fecha de vencimiento (MM/AA)" required>
-            <input type="email" placeholder="Correo Electronico:" required>
-            <input type="text" placeholder="Direccion de domicilio:" required>
-            <input type="submit" id="tarjetaFinally" value="PAGAR !!!">
+        <div>
+            <form onsubmit="return validar()" class="modalTarjeta__inputs" action="tienda.html">
+                <input type="number" id="card-number-input" placeholder="Número de tarjeta" required>
+                <input type="text" id="card-holder-input" placeholder="Nombre del titular" oninput="convertirMayusculas(this)" required>
+                <input type="text" id="expiration-date-input" placeholder="MM/AA" oninput="formatoFecha(this)" required>
+                <input type="email" placeholder="Correo Electronico:" required>
+                <input type="text" placeholder="Direccion de domicilio:" required>
+                <button type="submit" id="tarjetaFinally">PAGAR !!!</button>
+            </form>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
